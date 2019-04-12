@@ -19,10 +19,6 @@
 
     <!-- Here we be working -->
     <div class="working-area">
-      <md-content>
-
-      </md-content>
-
       <!-- using the class md-block helps to have one line -->
       <!-- using ng.model to keep the data in the correct variables -->
       <md-input-container class="md-block">
@@ -58,29 +54,28 @@
         </div>
       </md-input-container>
 
-      <md-input-container class="md-block">
+      <md-input-container class="md-inline">
         <label>Date of Birth</label>
         <md-datepicker ng-model="user.dob"></md-datepicker>
       </md-input-container>
 
       <!-- is md-block making these block elements??? -->
-      <md-input-container class="md-block">
+      <md-input-container class="md-inline">
         <label>Today's Date</label>
         <md-datepicker ng-model="user.submissionDate"></md-datepicker>
       </md-input-container>
 
-      <div>
-        <md-button type="submit" class="submitButton" class="background-color-green">Submit</md-button>
-      </div>
+      <md-button type="submit" class="submitButton" class="background-color-green" class="md-inline">Submit</md-button>
       
     </div>
 
     <!-- Footer -->
-    <div layout="row" layout-align="center center" class="background-color-green">
+    <div layout="row" layout-align="center center" class="background-color-green" class="footer-image">
       Cloned from Eleftheria Batsou's Daily UI (Angular JS + JS Material) challenge
     </div>
-    <div layout="row" layout-align="center center" class="background-color-green"></div>
-    <div layout="row" layout-align="center center" class="background-color-green"></div>
+    <div layout="row" layout-align="center center" class="background-color-green">Tim's Twitter</div>
+    <div layout="row" layout-align="center center" class="background-color-green">Tim's Github</div>
+    <div layout="row" layout-align="center center" class="background-color-green">Tim's LinkedIn</div>
   
 
     <!-- Angular Material requires Angular.js Libraries -->
