@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>100 Days of UI - sign up form</title>
+    
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+  </head>
+  
+  <body ng-app="BlankApp" ng-cloak>
+    <!-- Your HTML Content goes here -->
+
+    <!-- Today's theme -->
+    <div layout="row" class="theme" layout-align="center center"> Day 1: Sign Up Form</div>
+
+    <!-- Here we be working -->
+    <div class="working-area">
+      <md-content>
+
+      </md-content>
+
+      <!-- using the class md-block helps to have one line -->
+      <!-- using ng.model to keep the data in the correct variables -->
+      <md-input-container class="md-block">
+        <label>First Name</label>
+        <input ng-model="user.firstname">
+      </md-input-container>
+      
+      <md-input-container class="md-block">
+        <label>Last Name</label>
+        <input ng-model="user.lastname">
+      </md-input-container>
+      
+      <md-input-container class="md-block">
+        <label>Email</label>
+        <!-- using ng-model type for validation -->
+        <input ng-model="user.email" type="email">
+      </md-input-container>
+      
+      <md-input-container class="md-block">
+        <label>Address</label>
+        <input ng-model="user.address">
+      </md-input-container>
+      
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Zip Code</label>
+        <input name="zipCode" ng-model="user.zip" placeholder="12345" required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+
+        <!-- using ng-message pattern & required & max-length for data validation -->
+        <div ng-messages="userForm.zipCode.$error" role="alert" multiple>
+          <div ng-message="required" class="my-message">Please enter a zip code</div>
+          <div ng-message="pattern" class="my-message">That is not a valid zip code</div>
+          <div ng-message="md-maxlength" class="my-message">Only 5 digits</div>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Date of Birth</label>
+        <md-datepicker ng-model="user.dob"></md-datepicker>
+      </md-input-container>
+
+      <!-- is md-block making these block elements??? -->
+      <md-input-container class="md-block">
+        <label>Today's Date</label>
+        <md-datepicker ng-model="user.submissionDate"></md-datepicker>
+      </md-input-container>
+
+      <div>
+        <md-button type="submit" class="submitButton" class="background-color-green">Submit</md-button>
+      </div>
+      
+    </div>
+
+    <!-- Footer -->
+    <div layout="row" layout-align="center center" class="background-color-green">
+      Cloned from Eleftheria Batsou's Daily UI (Angular JS + JS Material) challenge
+    </div>
+    <div layout="row" layout-align="center center" class="background-color-green"></div>
+    <div layout="row" layout-align="center center" class="background-color-green"></div>
+  
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+
+    <!-- Your application bootstrap -->
+    <script type="text/javascript">
+      /*
+        MUST include the dependency on 'ngMaterial'
+      */
+      angular.module('BlankApp', ['ngMaterial', 'ngMessages']);
+    </script>
+
+  </body>
+</html>
