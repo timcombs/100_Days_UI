@@ -23,7 +23,8 @@ body {
 .submitButton {
   background-color: #a8ff0a !important;
   border-radius: 5%;
-  justify-items: left;
+  margin-left: 5vw;
+
 }
 
 #footer .footer-image {
